@@ -11,6 +11,7 @@
 ДЗ 6. Подсчитать количество слов во введенном предложении.*/
 
 using System;
+using System.Linq;
 
 namespace Homework_1
 {
@@ -18,7 +19,7 @@ namespace Homework_1
     {
         static void Main()
         {
-//ДЗ 1.  -------------------------------------------------------------------------------------------------------------------------------
+            //ДЗ 1.  -------------------------------------------------------------------------------------------------------------------------------
             /*char key;
             int count_space = 0;
             Console.Write("Введите символы: ");
@@ -57,7 +58,8 @@ namespace Homework_1
             Console.WriteLine();
             Console.Write("Количество измененных символов: ");
             Console.WriteLine($"{down + up}");*/
-//ДЗ 3.  -------------------------------------------------------------------------------------------------------------------------------
+
+            //ДЗ 3.  -------------------------------------------------------------------------------------------------------------------------------
             /*int a, b;
             Console.WriteLine("Введите числа A < B: ");
             a = Convert.ToInt32(Console.ReadLine());
@@ -70,8 +72,9 @@ namespace Homework_1
                 Console.WriteLine();
                 a++;
             }*/
-//ДЗ 4.  ----------------------------------------------------------------------------------------------------------------------------
-            const int m = 8;
+
+            //ДЗ 4.  ----------------------------------------------------------------------------------------------------------------------------
+            /*const int m = 8;
             const int n = 6;
             int[] arrayM = new int[m] { 2, 2, 4, 5, 6, 7, 8, 9 };
             int[] arrayN = new int[n] { 2, 2, 4, 5, 6, 7 };
@@ -120,7 +123,6 @@ namespace Homework_1
                 Console.Write($"{arrayC[i]}");
             }
             Console.WriteLine();
-
         }
         static void RandomArray(int[] array)
         {
@@ -137,7 +139,143 @@ namespace Homework_1
                 Console.Write($"{item}\t");
             }
             Console.WriteLine();
+        }*/
+
+            //ДЗ 5.  ----------------------------------------------------------------------------------------------------------------------------
+
+            /*String str;
+            Console.WriteLine("Введите строку: ");
+            str = Console.ReadLine();
+            Console.WriteLine($"{str}");
+            //str.RemoveSymbol();
+            //Tolower(str);
+            //str.ToLower();
+            char[] charsToTrim = { ' ' };
+            Console.Write("Строка: ");
+            Console.Write(IsPalindrome(str) ? "" : "НЕ ");
+            Console.WriteLine("является полиндромом!");
+
+            /*Console.WriteLine("Введите строку: ");
+            int n = 256;
+            String[] str = new String[n];
+            String text = Console.ReadLine();
+            str = text.Split();
+            //str = Convert.Tostring32(Console.ReadLine());/*Console.ReadKey().KeyChar;Console.ReadLine();
+            Console.WriteLine($"{str}");
+            IsPalindrome(str);
+        }*/
+        
+       /* static bool IsPalindrome(String[] str)
+        {
+            int n = str.Length;
+            String[] buffer = new String[n + 1];
+            for (int i = 0; i < n; i++)
+                buffer[i] = str[i];// копирует строку str в строку буфер 
+            //to_lower(buffer);
+            //remove_symbol(buffer, ' ');
+            n = buffer.Length;
+            for (int i = 0; i < n / 2; i++)
+            {
+                if (str[i] != str[n - 1 - i])
+                {
+                    //delete[] buffer;
+                    return false;
+                }
+            }
+            //delete[] buffer;
+            return true;
+        }*/
+        /*static int StrLen(String[] str)
+        {
+            int i = 0;
+            for (; str[i]; i++) ;
+            return i;
+        }*/
+
+        /*static bool IsPalindrome(String str)
+        {
+            return str == new String(str.Reverse().ToArray());
+        }*/
+        //ДЗ 6.  ----------------------------------------------------------------------------------------------------------------------------
+
+        //1 способ: 
+        /*Console.WriteLine("Введите текст:");
+        string[] textMass;
+        string text = Console.ReadLine();
+        textMass = text.Split(' ');
+        Console.WriteLine("Количество слов:");
+        Console.WriteLine(textMass.Length);
+        Console.ReadLine();*/
+
+        //2 способ:
+        Console.WriteLine("Введите текст:");
+        string str = Console.ReadLine();
+        str.Trim();
+        int count = 1;
+        foreach (char item in str)
+            if (item == ' ') count++;
+        Console.Write("Количество слов: ");
+        Console.WriteLine(str.Trim()).Trim();
+        Console.WriteLine(count);
+
+
+            //ДЗ 5.  ----------------------------------------------------------------------------------------------------------------------------
+
+            /*String str;
+            //String[] text;
+            Console.WriteLine("Введите строку: ");
+            str = Console.ReadLine();
+            char[] element = new char[]{ '*', ' ', '\'' };
+            String copystr = str.ToLower();
+            //text = copystr.Split(' ');
+            Console.Write("Строка: ");
+            Console.Write(IsPalindrome(copystr) ? "" : "НЕ ");
+            Console.WriteLine("является полиндромом!");
+                /*foreach (var sub in text)
+                {
+                    Console.WriteLine($"Substring: {text}");
+                }*/
+            /*foreach (int sym in element)
+             {
+                 copystr = copystr.Replace(sym.ToString(), "");
+                 //text = copystr.Replace(sym.ToString(), "");
+             }
         }
-//ДЗ 5.  ----------------------------------------------------------------------------------------------------------------------------
+    static bool IsPalindrome(String copystr)
+    //static bool IsPalindrome(String[] text)
+    {
+        return copystr == new String(copystr.Reverse().ToArray());
+        //return text == new String[](text.Reverse().ToArray());
+    }*/
+
+            //ДЗ 6.  ----------------------------------------------------------------------------------------------------------------------------
+
+            //1 способ: 
+            /*Console.WriteLine("Введите текст:");
+            string[] textMass;
+            string text = Console.ReadLine();
+            textMass = text.Split(' ');
+            Console.WriteLine("Количество слов:");
+            Console.WriteLine(textMass.Length);
+            Console.ReadLine();*/
+
+            //2 способ:
+            /*Console.WriteLine("Введите текст:");
+            string str = Console.ReadLine();
+            //char[] charsToTrim = { '*', ' ', '\'' };
+            string result = str.Trim(); //(charsToTrim);
+            string result1 = Regex.Replace(result, "[ ]+", " ");
+            //Console.WriteLine(Regex.Replace(result, "[ ]+", " "));
+            int counter = 1;
+            foreach (char item in result1)
+                if (item == ' ')
+                    counter++;
+            Console.Write("Количество слов: ");
+            Console.WriteLine(counter);*/
+        }
     }
 }
+
+
+   
+
